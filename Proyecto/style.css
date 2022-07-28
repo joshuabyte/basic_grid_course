@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: 2fr 3fr;
+  grid-auto-rows: 400px;
+  /* max-height: 400px; */
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info {
+  /* We use align-self to center the whole container into the grid */
+  align-self: center;
+}
+
+.info h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.info p {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.info button {
+  width: 120px;
+  height: 35px;
+  background-color: rgb(255, 136, 0);
+  border: none;
+  border-radius: 18px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+  font-weight: bolder;
+  color: #333;
+}
+
+.dishes {
+    display: grid;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    padding: 30px;
+    gap: 20px;
+}
+
+.main-dishes-container h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.dishes-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.dishes-item__big {
+    grid-area: 1 / 1 / 3 / 3;
+}
