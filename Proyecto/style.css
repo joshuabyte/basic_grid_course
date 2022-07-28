@@ -17,8 +17,9 @@ main {
 .hero {
   display: grid;
   padding: 30px;
-  grid-template-columns: 2fr 3fr;
-  grid-auto-rows: 400px;
+  /* For resposiveness changed 2fr with minmax */
+  grid-template-columns: minmax(300px, 2fr) 3fr;
+  grid-auto-rows: 550px;
   /* max-height: 400px; */
   color: #333;
   border-bottom: 1px solid #ddd;
@@ -61,10 +62,12 @@ main {
 
 .dishes {
     display: grid;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    /* width: 100%; */
+    /* max-width: 900px; */
+    /* margin: 0 auto; */
+    /* Added auto-fit instead of 4 columns. Auto-fit is fucking awesome. It places each grid according to the width of the device */
+    grid-template-columns: repeat(auto-fit, minmax(75px, 200px));
     grid-auto-rows: 1fr;
     padding: 30px;
     gap: 20px;
@@ -74,7 +77,7 @@ main {
     color: #333;
     text-align: center;
     margin-top: 20px;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -91,4 +94,58 @@ main {
 
 .dishes-item__big {
     grid-area: 1 / 1 / 3 / 3;
+}
+
+.menu {
+  margin-bottom: 50px;
+  padding: 30px;
+}
+
+.menu h2 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  justify-content: center;
+  gap: 25px;
+}
+
+.menu-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.menu-grid-item {
+  background-color: rgb(253, 235, 228);
+  padding: 15px;
+  border-top-left-radius: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero{
+    grid-template-columns: minmax(300px, 500px);
+    justify-content: center;
+  }
+  
+  .hero-img {
+    display: none;
+  }
+
+  .dishes {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 100px));
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .menu-grid{
+    grid-template-columns: repeat(auto-fit, 117px);
+  }
 }
